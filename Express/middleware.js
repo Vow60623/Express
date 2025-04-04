@@ -19,7 +19,10 @@ const adi = (req,res,next)=>{
     const name=req.query.name
     if(!name)
     {
-        res.send('Plz enter your Name')
+        res.send('Please, Enter your name!')
+    }
+    if(name!='Nidhi'){
+        res.send('Invalid Candidate!')
     }
     if(name==='Nidhi'){
         res.send('Welcome, Nidhi!')
@@ -28,9 +31,13 @@ const adi = (req,res,next)=>{
     next();
 }
 
+// for all -> we make application middleware
+//app.use(adi)
+
 app.get('/',(req,res)=>{
     res.send('This is my home page')
 })
+
 
 //rout middleware -> for any single query
 
